@@ -108,6 +108,45 @@ int main() {
 
     }
 
+    case 14: {
+
+        int matriz[5][5];
+        int rotada[5][5];
+
+        llenarMatriz(&matriz[0][0]);
+
+        cout << endl;
+        cout << "Matriz Original:" << endl;
+
+        imprimirMatriz(&matriz[0][0]);
+
+
+        rotarMatriz(&matriz[0][0], &rotada[0][0], 90);
+
+        cout << endl;
+        cout << "Matriz Rotada 90 grados:" << endl;
+
+        imprimirMatriz(&rotada[0][0]);
+
+
+        rotarMatriz(&matriz[0][0], &rotada[0][0], 180);
+
+        cout << endl;
+        cout << "Matriz Rotada 180 grados:" << endl;
+
+        imprimirMatriz(&rotada[0][0]);
+
+
+        rotarMatriz(&matriz[0][0], &rotada[0][0], 270);
+
+        cout << endl;
+        cout << "Matriz Rotada 270 grados:" << endl;
+
+        imprimirMatriz(&rotada[0][0]);
+
+        break;
+    }
+
     case 0:{
         cout << "Saliendo del programa" << endl;
         break;

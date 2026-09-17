@@ -16,4 +16,9 @@ void leerMatriz(int *matriz, int n);
 void imprimirMatriz(int *matriz, int n);
 bool esMagico(int *matriz, int n);
 
+
+void llenarMatriz(int *matriz);
+void imprimirMatriz(int *matriz);
+void rotarMatriz(int *original, int *rotada, int grados);
+
 #endif

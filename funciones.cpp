@@ -203,3 +203,61 @@ bool esMagico(int *matriz, int n) {
 
     return true;
 }
+
+
+void llenarMatriz(int *matriz) {                  // ejercisio 14
+
+    int numero = 1;
+
+    for (int i = 0; i < 5; i++) {
+
+        for (int j = 0; j < 5; j++) {
+
+            *(matriz + i * 5 + j) = numero;
+
+            numero++;
+        }
+    }
+}
+
+
+void imprimirMatriz(int *matriz) {
+
+    for (int i = 0; i < 5; i++) {
+
+        for (int j = 0; j < 5; j++) {
+
+            cout << *(matriz + i * 5 + j) << "\t";
+        }
+
+        cout << endl;
+    }
+}
+
+
+void rotarMatriz(int *original, int *rotada, int grados) {
+
+    for (int i = 0; i < 5; i++) {
+
+        for (int j = 0; j < 5; j++) {
+
+            if (grados == 90) {
+
+                *(rotada + i * 5 + j) =
+                    *(original + (4 - j) * 5 + i);
+            }
+
+            else if (grados == 180) {
+
+                *(rotada + i * 5 + j) =
+                    *(original + (4 - i) * 5 + (4 - j));
+            }
+
+            else if (grados == 270) {
+
+                *(rotada + i * 5 + j) =
+                    *(original + j * 5 + (4 - i));
+            }
+        }
+    }
+}
