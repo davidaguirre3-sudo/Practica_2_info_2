@@ -261,3 +261,27 @@ void rotarMatriz(int *original, int *rotada, int grados) {
         }
     }
 }
+
+long long factorial(int *numero)                   // Ejercisio 16
+{
+    long long resultado = 1;
+
+    for (int i = 1; i <= *numero; i++)
+    {
+        resultado = resultado * i;
+    }
+
+    return resultado;
+}
+
+long long calcularCaminos(int *n)
+{
+    int total = 2 * (*n);
+
+    long long factTotal = factorial(&total);
+    long long factN = factorial(n);
+
+    long long caminos = factTotal / (factN * factN);
+
+    return caminos;
+}

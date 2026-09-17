@@ -147,6 +147,30 @@ int main() {
         break;
     }
 
+    case 16: {
+
+        int n;
+
+        cout << "Ingrese el tamaño de la malla: ";
+        cin >> n;
+
+        if (n <= 0)
+        {
+            cout << "El numero debe ser mayor que 0." << endl;
+        }
+        else
+        {
+            long long caminos = calcularCaminos(&n);
+
+            cout << "Para una malla de " << n << "x" << n
+                 << " puntos hay " << caminos << " caminos." << endl;
+        }
+
+    break;
+    }
+
+
+
     case 0:{
         cout << "Saliendo del programa" << endl;
         break;
@@ -160,5 +184,7 @@ int main() {
     return 0;
 
 }
+
+
 
 

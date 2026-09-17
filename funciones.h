@@ -21,4 +21,7 @@ void llenarMatriz(int *matriz);
 void imprimirMatriz(int *matriz);
 void rotarMatriz(int *original, int *rotada, int grados);
 
+long long factorial(int *numero);
+long long calcularCaminos(int *n);
+
 #endif
