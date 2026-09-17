@@ -83,6 +83,31 @@ int main() {
 
     }
 
+    case 12: {
+        int n;
+
+        cout << "Ingrese el tamano de la matriz: ";
+        cin >> n;
+
+        int matriz[n][n];
+
+        leerMatriz(&matriz[0][0], n);
+
+        cout << endl << "Matriz:" << endl;
+
+        imprimirMatriz(&matriz[0][0], n);
+
+        if (esMagico(&matriz[0][0], n)) {
+            cout << "La matriz es un cuadrado magico." << endl;
+        }
+        else {
+            cout << "La matriz no es un cuadrado magico." << endl;
+        }
+
+        break;
+
+    }
+
     case 0:{
         cout << "Saliendo del programa" << endl;
         break;

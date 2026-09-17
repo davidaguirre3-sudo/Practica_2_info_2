@@ -43,6 +43,7 @@ void convertirMayusculas(char *cadena) {      // 6 problema
             *cadena = *cadena - ('a' - 'A');
         }
         cadena++;
+        cout << "direccion" << &cadena <<endl;
     }
 }
 
@@ -108,4 +109,97 @@ int romanoArabigo(char *romano){              // 10 problema
     }
 
     return total;
+}
+
+void leerMatriz(int *matriz, int n) {                  // ejercisio 12
+
+    for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n; j++) {
+
+            cout << "Ingrese [" << i << "][" << j << "]: ";
+            cin >> *(matriz + i * n + j);
+        }
+    }
+}
+
+
+void imprimirMatriz(int *matriz, int n) {
+
+    for (int i = 0; i < n; i++) {
+
+        for (int j = 0; j < n; j++) {
+
+            cout << *(matriz + i * n + j) << "\t";
+        }
+
+        cout << endl;
+    }
+}
+
+
+bool esMagico(int *matriz, int n) {
+
+    int constante = 0;
+
+    // Suma de la primera fila
+    for (int j = 0; j < n; j++) {
+        constante = constante + *(matriz + j);
+    }
+
+
+    // Comprobar las filas
+    for (int i = 0; i < n; i++) {
+
+        int suma = 0;
+
+        for (int j = 0; j < n; j++) {
+            suma = suma + *(matriz + i * n + j);
+        }
+
+        if (suma != constante) {
+            return false;
+        }
+    }
+
+
+    // Comprobar las columnas
+    for (int j = 0; j < n; j++) {
+
+        int suma = 0;
+
+        for (int i = 0; i < n; i++) {
+            suma = suma + *(matriz + i * n + j);
+        }
+
+        if (suma != constante) {
+            return false;
+        }
+    }
+
+
+    // Diagonal principal
+    int suma = 0;
+
+    for (int i = 0; i < n; i++) {
+        suma = suma + *(matriz + i * n + i);
+    }
+
+    if (suma != constante) {
+        return false;
+    }
+
+
+    // Diagonal secundaria
+    suma = 0;
+
+    for (int i = 0; i < n; i++) {
+        suma = suma + *(matriz + i * n + (n - 1 - i));
+    }
+
+    if (suma != constante) {
+        return false;
+    }
+
+    return true;
 }
