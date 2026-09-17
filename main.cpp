@@ -151,7 +151,7 @@ int main() {
 
         int n;
 
-        cout << "Ingrese el tamaño de la malla: ";
+        cout << "Ingrese el tamano de la malla: ";
         cin >> n;
 
         if (n <= 0)
@@ -165,11 +165,42 @@ int main() {
             cout << "Para una malla de " << n << "x" << n
                  << " puntos hay " << caminos << " caminos." << endl;
         }
-
     break;
     }
 
+    case 18: {
+            long long n;
 
+            int numeros[10];
+            int resultado[10];
+
+            int tamano = 10;
+
+            cout << "Ingrese el numero de la permutacion: ";
+            cin >> n;
+
+            if (n < 1 || n > factorial_2(&tamano))
+            {
+                cout << "El numero debe estar entre 1 y "
+                     << factorial_2(&tamano) << "." << endl;
+            }
+            else
+            {
+                inicializar(numeros, &tamano);
+
+                encontrarPermutacion(&n, numeros, &tamano, resultado);
+
+                cout << "La permutacion numero " << n << " es: ";
+
+                for (int i = 0; i < tamano; i++)
+                {
+                    cout << *(resultado + i);
+                }
+
+                cout << "." << endl;
+         }
+            break;
+    }
 
     case 0:{
         cout << "Saliendo del programa" << endl;

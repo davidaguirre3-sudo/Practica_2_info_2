@@ -285,3 +285,48 @@ long long calcularCaminos(int *n)
 
     return caminos;
 }
+
+
+void inicializar(int *numeros, int *tamano)
+{
+    for (int i = 0; i < *tamano; i++)
+    {
+        *(numeros + i) = i;
+    }
+}
+
+long long factorial_2(int *numero)
+{
+    long long resultado = 1;
+
+    for (int i = 1; i <= *numero; i++)
+    {
+        resultado = resultado * i;
+    }
+
+    return resultado;
+}
+
+void encontrarPermutacion(long long *n, int *numeros, int *tamano, int *resultado)
+{
+    long long posicion = *n - 1;
+
+    for (int i = 0; i < *tamano; i++){
+
+        int restante = *tamano - i - 1;
+        long long cantidad = factorial_2(&restante);
+        int posicionNumero = posicion / cantidad;
+        posicion = posicion % cantidad;
+
+        *(resultado + i) = *(numeros + posicionNumero);
+
+        for (int j = posicionNumero; j < *tamano - i - 1; j++) {
+            *(numeros + j) = *(numeros + j + 1);
+        }
+    }
+}
+
+
+
+
+

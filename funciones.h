@@ -24,4 +24,8 @@ void rotarMatriz(int *original, int *rotada, int grados);
 long long factorial(int *numero);
 long long calcularCaminos(int *n);
 
+void inicializar(int *numeros, int *tamano);
+long long factorial_2(int *numero);
+void encontrarPermutacion(long long *n, int *numeros, int *tamano, int *resultado);
+
 #endif
